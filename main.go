@@ -24,9 +24,8 @@ func getYowLines(c *gin.Context) {
 }
 
 func getYowLine(c *gin.Context) {
-	var rand = rand.Intn(len(yowLines));
-
-	c.IndentedJSON(http.StatusOK, yowLines[rand];
+	var rand = rand.Intn(len(yowLines))
+	c.IndentedJSON(http.StatusOK, yowLines[rand]
 }
 
 func main() {
