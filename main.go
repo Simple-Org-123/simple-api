@@ -31,7 +31,7 @@ func getYowLine(c *gin.Context) {
 
 func main() {
 	router := gin.Default()
-	router.GET("/", getYowLines)
-
+	router.GET("/all", getYowLines)
+	router.GET("/", getYowLine)
 	router.Run("localhost:8080")
 }
