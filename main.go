@@ -35,5 +35,5 @@ func main() {
 	router := gin.Default()
 	router.GET("/all", getYowLines)
 	router.GET("/", getYowLine)
-	router.Run()
+	router.Run("0.0.0.0:8080")
 }
