@@ -2,9 +2,41 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: simple-api
+    links:
+      links:
+    - url: https://simple-api
+      title: simple api
+      icon: api
   annotations:
     github.com/project-slug: mathesonbr/simple-api
 spec:
   type: service
   lifecycle: experimental
   owner: mathesonbr
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: simple-api
+  description: yow line emitter
+spec:
+  type: openapi
+  lifecycle: experimental
+  owner: mathesonbr@vmware.com
+  system: simple-app
+  definition: |
+    openapi: "3.0.0"
+    info:
+      version: 0.0.2
+      title: Simple API
+      license:
+        name: MIT
+    servers:
+      - url: http://simple-api
+    paths:
+        /:
+          get:
+            summary: Emit random yow line
+        /all:
+          get:
+            summary: Emit all yow lines
