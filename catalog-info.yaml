@@ -2,12 +2,11 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: simple-api
-    links:
-    - url: https://simple-api
-      title: simple api
-      icon: api
-  annotations:
-    github.com/project-slug: mathesonbr/simple-api
+  links:
+  - url: https://simple-api
+    title: simple api
+    icon: api  annotations:
+  github.com/project-slug: mathesonbr/simple-api
 spec:
   type: service
   lifecycle: experimental
