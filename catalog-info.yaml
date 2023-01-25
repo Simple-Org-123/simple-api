@@ -5,8 +5,9 @@ metadata:
   links:
   - url: https://simple-api
     title: simple api
-    icon: api  annotations:
-  github.com/project-slug: mathesonbr/simple-api
+    icon: api  
+  annotations:
+    github.com/project-slug: mathesonbr/simple-api
 spec:
   type: service
   lifecycle: experimental
