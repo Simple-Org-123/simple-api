@@ -2,7 +2,7 @@ apiVersion: carto.run/v1alpha1
 kind: Workload
 metadata:
   name: simple-api
-  namespace: dev-tap
+  namespace: dev
   labels:
     apps.tanzu.vmware.com/workload-type: server
     app.kubernetes.io/part-of: simple-api
@@ -13,6 +13,6 @@ spec:
       autoscaling.knative.dev/minScale: "1"
   source:
     git:
-      url: https://github.com/mathesonbr/simple-api.git
+      url: https://github.com/Simple-Org-123/simple-api.git
       ref:
         branch: main
