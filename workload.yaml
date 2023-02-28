@@ -6,6 +6,7 @@ metadata:
   labels:
     apps.tanzu.vmware.com/workload-type: server
     app.kubernetes.io/part-of: simple-api
+    apps.tanzu.vmware.com/has-tests: "true"
 spec:
   params:
   - name: annotations
