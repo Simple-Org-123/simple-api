@@ -9,6 +9,7 @@ metadata:
   annotations:
     github.com/project-slug: mathesonbr/simple-api    
     backstage.io/kubernetes-label-selector: app.kubernetes.io/part-of=simple-api
+    backstage.io/techdocs-ref: README.md
 spec:
   type: service
   lifecycle: experimental
