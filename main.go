@@ -21,6 +21,7 @@ var yowLines = []yow {
 	{ID: 5, Line: "And ruthless efficiency"},
 	{ID: 6, Line: "Amongst our weaponry are such diverse elements as"},
 	{ID: 7, Line: "Fear, surprise, ruthless efficiency, and an almost fanatical devotion to the pope."},
+	{ID: 8, Line: "Cardinal!"},
 }
 
 func getYowLines(c *gin.Context) {
