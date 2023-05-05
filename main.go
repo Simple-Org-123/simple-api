@@ -42,7 +42,7 @@ func putYowLines(c *gin.Context) {
 	}
 
 	db.Model(&yow).Create(map[string]interface{}{
-		{Line: "And ruthless efficiency"},
+		{Line: "And ruthless efficiency", ID: 1},
 	})
 }
 
