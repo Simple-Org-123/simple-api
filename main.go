@@ -32,8 +32,15 @@ var yowLines = []yow{
 	{ID: 8, Line: "Cardinal!"},
 }
 
-func getYowLines(c *gin.Context) {
-	c.IndentedJSON(http.StatusOK, yowLines)
+func putYowLine(c *git.Context, db) {
+	db.Model(&Yow).create(map[string]interface{}{
+		yowLines
+	})
+}
+
+func getYowLines(c *gin.Context, db) {
+	lines := []String
+	c.IndentedJSON(http.StatusOK, db.Find(&lines)
 }
 
 func getYowLine(c *gin.Context) {
