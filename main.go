@@ -32,7 +32,7 @@ var yowLines = []yow{
 	{ID: 8, Line: "Cardinal!"},
 }
 
-func putYowLine(c *git.Context, db *DB) {
+func putYowLines(c *git.Context, db *DB) {
 	db.Model(&Yow).create(map[string]interface{}{
 		{ID: 5, Line: "And ruthless efficiency"},
 		{ID: 6, Line: "Amongst our weaponry are such diverse elements as"},
@@ -55,10 +55,11 @@ func main() {
 	if err != nil {
 		os.Exit(1)
 	}
-	putYowLine(db)
-	getYowLines()
+	putYowLines(db)
+	getYowLines(db)
 
 	router := gin.Default()
+	router.PUT("/all", putYowLines(db))
 	router.GET("/all", getYowLines)
 	router.GET("/", getYowLine)
 	router.Run("0.0.0.0:8080")
