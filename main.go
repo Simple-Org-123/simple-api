@@ -15,7 +15,7 @@ type yow struct {
 	ID   int    `json:"id"`
 	Line string `json:"line"`
 }
-type Yow struct {
+type yowdb struct {
 	gorm.Model
 	Line string `json:"line"`
 }
@@ -33,7 +33,7 @@ var yowLines = []yow{
 }
 
 func putYowLines(c *gin.Context, db *gorm.DB) {
-	db.Model(&Yow).create(map[string]interface{}{
+	db.Model(&yowdb).create(map[string]interface{}{
 		{ID: 5, Line: "And ruthless efficiency"},
 		{ID: 6, Line: "Amongst our weaponry are such diverse elements as"},
 	})
