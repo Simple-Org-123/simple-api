@@ -3,6 +3,7 @@ package main
 import (
 	"math/rand"
 	"net/http"
+	"os"
 
 	"github.com/gin-gonic/gin"
 	"gorm.io/driver/postgres"
@@ -43,7 +44,9 @@ func getYowLine(c *gin.Context) {
 func main() {
 	dsn := "host=pg user=simple password=F4Y6ABDtEGQ379VZ58KJJkc2N99AsX dbname=simple port=5432 sslmode=disable TimeZone=America/New_York"
 	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
-
+	if err != nil {
+		os.Exit(1)
+	}
 	router := gin.Default()
 	router.GET("/all", getYowLines)
 	router.GET("/", getYowLine)
