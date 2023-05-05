@@ -32,14 +32,14 @@ var yowLines = []yow{
 	{ID: 8, Line: "Cardinal!"},
 }
 
-func putYowLines(c *gin.Context, db *DB) {
+func putYowLines(c *gin.Context, db *gorm.DB) {
 	db.Model(&Yow).create(map[string]interface{}{
 		{ID: 5, Line: "And ruthless efficiency"},
 		{ID: 6, Line: "Amongst our weaponry are such diverse elements as"},
 	})
 }
 
-func getYowLines(c *gin.Context, db *DB) {
+func getYowLines(c *gin.Context, db *gorm.DB) {
 	var lines []String
 	c.IndentedJSON(http.StatusOK, db.Find(&lines))
 }
