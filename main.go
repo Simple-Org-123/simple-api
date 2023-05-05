@@ -41,7 +41,7 @@ func putYowLines(c *gin.Context, db *gorm.DB) {
 }
 
 func getYowLines(c *gin.Context, db *gorm.DB) {
-	var lines []String
+	var lines []string
 	c.IndentedJSON(http.StatusOK, db.Find(&lines))
 }
 
