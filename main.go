@@ -35,7 +35,6 @@ var yowLines = []yow{
 var dsn = "host=pg user=simple password=F4Y6ABDtEGQ379VZ58KJJkc2N99AsX dbname=simple port=5432 sslmode=disable TimeZone=America/New_York"
 
 func putYowLines(c *gin.Context) {
-	var yow yowdb
 	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 	if err != nil {
 		os.Exit(1)
