@@ -41,9 +41,7 @@ func putYowLines(c *gin.Context) {
 		os.Exit(1)
 	}
 
-	db.Model(&yow).Create(map[string]interface{}{
-		{Line: "And ruthless efficiency", ID: 1},
-	})
+	db.Create(&yowLines){
 }
 
 func getYowLines(c *gin.Context) {
