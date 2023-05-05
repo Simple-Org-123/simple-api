@@ -41,7 +41,7 @@ func putYowLines(c *gin.Context) {
 		os.Exit(1)
 	}
 
-	db.Create(&yowLines){
+	db.Create(&yowLines)
 }
 
 func getYowLines(c *gin.Context) {
