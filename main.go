@@ -58,7 +58,7 @@ func main() {
 	}
 
 	router := gin.Default()
-	router.PUT("/all", putYowLines(db))
+	router.PUT("/all", putYowLines)
 	router.GET("/all", getYowLines)
 	router.GET("/", getYowLine)
 	router.Run("0.0.0.0:8080")
