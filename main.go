@@ -41,7 +41,7 @@ func putYowLine(c *git.Context, db *DB) {
 
 func getYowLines(c *gin.Context, db *DB) {
 	var lines []String
-	c.IndentedJSON(http.StatusOK, db.Find(&lines)
+	c.IndentedJSON(http.StatusOK, db.Find(&lines))
 }
 
 func getYowLine(c *gin.Context) {
