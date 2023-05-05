@@ -34,7 +34,8 @@ var yowLines = []yow{
 
 func putYowLine(c *git.Context, db *DB) {
 	db.Model(&Yow).create(map[string]interface{}{
-		yowLines
+		{ID: 5, Line: "And ruthless efficiency"},
+		{ID: 6, Line: "Amongst our weaponry are such diverse elements as"},
 	})
 }
 
