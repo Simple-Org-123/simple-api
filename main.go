@@ -55,6 +55,9 @@ func main() {
 	if err != nil {
 		os.Exit(1)
 	}
+	putYowLine(db)
+	getYowLines()
+
 	router := gin.Default()
 	router.GET("/all", getYowLines)
 	router.GET("/", getYowLine)
