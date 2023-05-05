@@ -1,9 +1,10 @@
 package main
 
 import (
-	"github.com/gin-gonic/gin"
 	"math/rand"
 	"net/http"
+
+	"github.com/gin-gonic/gin"
 )
 
 // the yow struct is a collection of one-line phrases
@@ -34,7 +35,6 @@ func getYowLine(c *gin.Context) {
 }
 
 func main() {
-	dbcfg := mysql.Configt
 
 	router := gin.Default()
 	router.GET("/all", getYowLines)
