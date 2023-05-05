@@ -36,7 +36,7 @@ func putYowLines(c *gin.Context, db *gorm.DB) {
 	var yow yowdb
 	db.Model(&yow).Create(map[string]interface{}{
 		{{ID: 5, Line: "And ruthless efficiency"},
-		{ID: 6, Line: "Amongst our weaponry are such diverse elements as"}}
+			{ID: 6, Line: "Amongst our weaponry are such diverse elements as"}},
 	})
 }
 
