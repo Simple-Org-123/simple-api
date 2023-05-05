@@ -32,7 +32,13 @@ var yowLines = []yow{
 	{ID: 8, Line: "Cardinal!"},
 }
 
-func putYowLines(c *gin.Context, db *gorm.DB) {
+dsn := "host=pg user=simple password=F4Y6ABDtEGQ379VZ58KJJkc2N99AsX dbname=simple port=5432 sslmode=disable TimeZone=America/New_York"
+db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
+if err != nil {
+	os.Exit(1)
+}
+
+func putYowLines(c *gin.Context) {
 	var yow yowdb
 	db.Model(&yow).Create(map[string]interface{}{
 		{{ID: 5, Line: "And ruthless efficiency"},
@@ -40,7 +46,7 @@ func putYowLines(c *gin.Context, db *gorm.DB) {
 	})
 }
 
-func getYowLines(c *gin.Context, db *gorm.DB) {
+func getYowLines(c *gin.Context) {
 	var lines []string
 	c.IndentedJSON(http.StatusOK, db.Find(&lines))
 }
@@ -51,11 +57,6 @@ func getYowLine(c *gin.Context) {
 }
 
 func main() {
-	dsn := "host=pg user=simple password=F4Y6ABDtEGQ379VZ58KJJkc2N99AsX dbname=simple port=5432 sslmode=disable TimeZone=America/New_York"
-	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
-	if err != nil {
-		os.Exit(1)
-	}
 
 	router := gin.Default()
 	router.PUT("/all", putYowLines)
