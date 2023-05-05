@@ -5,11 +5,17 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
+	"gorm.io/driver/postgres"
+	"gorm.io/gorm"
 )
 
 // the yow struct is a collection of one-line phrases
 type yow struct {
 	ID   int    `json:"id"`
+	Line string `json:"line"`
+}
+type Yow struct {
+	gorm.Model
 	Line string `json:"line"`
 }
 
@@ -35,6 +41,8 @@ func getYowLine(c *gin.Context) {
 }
 
 func main() {
+	dsn := "host=pg user=simple password=F4Y6ABDtEGQ379VZ58KJJkc2N99AsX dbname=simple port=5432 sslmode=disable TimeZone=America/New_York"
+	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 
 	router := gin.Default()
 	router.GET("/all", getYowLines)
